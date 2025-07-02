@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="left">
+      <i class="fa-brands fa-spotify logo"></i>
+      <input type="text" placeholder="What do you want to play?" />
+    </div>
+    <div class="right">
+      <a href="#">Premium</a>
+      <a href="#">Support</a>
+      <a href="#">Download</a>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+      <button class="login">Log in</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="nav-icon active" title="Home"><i class="fa-solid fa-house"></i></div>
+      <div class="nav-icon" title="Search"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="nav-icon" title="Library"><i class="fa-solid fa-book"></i></div>
+      <div class="nav-icon" title="Create Playlist"><i class="fa-solid fa-plus"></i></div>
+      <div class="nav-icon" title="Liked Songs"><i class="fa-solid fa-heart"></i></div>
+      <div class="nav-icon" title="Your Episodes"><i class="fa-solid fa-headphones"></i></div>
+    </div>
+
+    <div class="main">
+      <h2>Trending Songs</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-btn left" onclick="scrollLeft('trendingRow')"><i class="fa-solid fa-angle-left"></i></button>
+        <div class="scroll-row" id="trendingRow">
+          <div class="card">Sapphire<br><small>Ed Sheeran</small></div>
+          <div class="card">0008<br><small>Sidhu Moose Wala</small></div>
+          <div class="card">Dil Ka Kya<br><small>Pritam</small></div>
+          <div class="card">Shaky<br><small>G-SPXRK</small></div>
+          <div class="card">Muththa Mazhai<br><small>A.R. Rahman</small></div>
+          <div class="card">Blinding Lights<br><small>The Weeknd</small></div>
+          <div class="card">Levitating<br><small>Dua Lipa</small></div>
+          <div class="card">Love Story<br><small>Taylor Swift</small></div>
+        </div>
+        <button class="scroll-btn right" onclick="scrollRight('trendingRow')"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+
+      <h2>Popular Artists</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-btn left" onclick="scrollLeft('artistRow')"><i class="fa-solid fa-angle-left"></i></button>
+        <div class="scroll-row" id="artistRow">
+          <div class="artist-card">
+            <div class="artist-placeholder">
+              <img src="https://tse3.mm.bing.net/th/id/OIP.y7TLjWlKD-pPqY2ugqxIvgHaIZ?pid=Api&P=0&h=180" alt="The Weeknd">
+            </div>
+            <span>The Weeknd</span>
+          </div>
+          <div class="artist-card">
+            <div class="artist-placeholder">
+              <img src="https://tse2.mm.bing.net/th/id/OIP.vupEPtLg3WKtMzdP7U1y3QHaGV?pid=Api&P=0&h=180" alt="Dua Lipa">
+            </div>
+            <span>Dua Lipa</span>
+          </div>
+          <div class="artist-card">
+            <div class="artist-placeholder">
+              <img src="https://vectorseek.com/wp-content/uploads/2023/07/Taylor-Swift-Silhouette-Logo-Vector.svg-.png" alt="Taylor Swift">
+            </div>
+            <span>Taylor Swift</span>
+          </div>
+          <div class="artist-card">
+            <div class="artist-placeholder">
+              <img src="https://i.pinimg.com/736x/e9/2f/54/e92f5496f837152327125b0a8c0aeee3.jpg" alt="Arijit Singh">
+            </div>
+            <span>Arijit Singh</span>
+          </div>
+        </div>
+        <button class="scroll-btn right" onclick="scrollRight('artistRow')"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+
+      <h2>My Playlist</h2>
+      <div class="scroll-row">
+        <div class="card">Party Mix</div>
+        <div class="card">Relax Vibes</div>
+        <div class="card">Daily Drive</div>
+        <div class="card">Focus Time</div>
+      </div>
+
+      <h2>Recently Played</h2>
+      <div class="scroll-row">
+        <div class="card">Shape of You</div>
+        <div class="card">Heat Waves</div>
+        <div class="card">Bones</div>
+        <div class="card">Closer</div>
+      </div>
+
+      <h2>Weekly Top Songs</h2>
+      <div class="scroll-row">
+        <div class="card">Calm Down</div>
+        <div class="card">Animal</div>
+        <div class="card">Señorita</div>
+        <div class="card">Perfect</div>
+      </div>
+
+      <h2>Trending Today</h2>
+      <div class="scroll-row">
+        <div class="card">Night Changes</div>
+        <div class="card">Jawan Theme</div>
+        <div class="card">Pathaan Anthem</div>
+        <div class="card">Raabta</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    function scrollLeft(id) {
+      const container = document.getElementById(id);
+      container.scrollLeft -= 300;
+    }
+
+    function scrollRight(id) {
+      const container = document.getElementById(id);
+      container.scrollLeft += 300;
+    }
+  </script>
+</body>
+</html>

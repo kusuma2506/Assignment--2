@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.light-mode {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #1f1f1f;
+}
+
+.left input {
+  padding: 7px 12px;
+  margin-left: 15px;
+  border-radius: 20px;
+  border: none;
+  width: 300px;
+}
+
+.right a, .right button {
+  margin-left: 15px;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.right .login {
+  background-color: #1db954;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.nav-icon {
+  font-size: 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.nav-icon.active, .nav-icon:hover {
+  color: #1db954;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 10px 0;
+  flex: 1;
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-row::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.scroll-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: 0;
+}
+.scroll-btn.right {
+  position: absolute;
+  right: 0;
+}
+
+.card, .artist-card {
+  background-color: #282828;
+  padding: 15px;
+  min-width: 160px;
+  border-radius: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card small {
+  color: #aaa;
+}
+
+.artist-placeholder {
+  width: 100%;
+  height: 120px;
+  background-color: #444;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.artist-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Light Mode */
+.light-mode .topbar {
+  background-color: #e0e0e0;
+}
+
+.light-mode .sidebar {
+  background-color: #f0f0f0;
+}
+
+.light-mode .card,
+.light-mode .artist-card {
+  background-color: #ddd;
+}
+
+.light-mode .nav-icon {
+  color: #555;
+}
+
+.light-mode .nav-icon.active,
+.light-mode .nav-icon:hover {
+  color: #007bff;
+}
